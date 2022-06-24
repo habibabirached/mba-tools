@@ -1,13 +1,14 @@
 
 # One time install modules. Don't need to do it after that.
 # Can be commented out.
-
+# Set-ExecutionPolicy Unrestricted
 Install-Module PSWindowsUpdate
 Add-WUServiceManager -MicrosoftUpdate
 
 # This is to install the updates. Will be needed each time.
 
-Install -WindowsUpdate -MicrosoftUpdate -AcceptAll -AutoReboot
+Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -AutoReboot
+Install-WindowsUpdate -AutoReboot
 
 Timeout /T 10
 
